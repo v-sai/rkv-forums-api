@@ -7,8 +7,12 @@
   "scripts": {
     "start": "nodemon app.js"
   },
+  
   "author": "sai vaddemani",
   "license": "ISC",
+  "engines": {
+    "node": "16.13.1"
+  },
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
