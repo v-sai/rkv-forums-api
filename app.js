@@ -24,7 +24,7 @@ app.get("/", (req, res) => res.status(200).json("E-commerce-api"));
 app.get("/api/v1", (req, res) => {
   // console.log(req.cookies);
   console.log(req.signedCookies);
-  res.status(200).json("E-commerce-api");
+  res.status(200).json("RKV FORUMS API");
 });
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
