@@ -32,15 +32,12 @@ app.use("/api/v1/users", userRoute);
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const start = async () => {
   try {
     await connectToDb(process.env.MONGO_URL);
-    app.listen(
-      port,
-      console.log(`api server started at port port ${port}`)
-    );
+    app.listen(PORT, console.log(`api server started at port  ${PORT}`));
   } catch (error) {
     console.log(error);
   }
