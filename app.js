@@ -7,6 +7,7 @@ const app = express();
 
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import cors from 'cors'
 
 import connectToDb from "./db/connect.js";
 import notFound from "./middlewares/notFound.js";
@@ -18,8 +19,15 @@ import userRoute from "./routes/user.routes.js";
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
+app.use(
+  cors({
+    origin:'*',
+    methods:["GET","POST","PATCH","PUT","DELETE"],
+    credentials:true
+  })
+)
 
-app.get("/", (req, res) => res.status(200).json("E-commerce-api"));
+app.get("/", (req, res) => res.status(200).json("RKV FORUMS API"));
 //test route
 app.get("/api/v1", (req, res) => {
   // console.log(req.cookies);
