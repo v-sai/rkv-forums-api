@@ -19,13 +19,25 @@ import userRoute from "./routes/user.routes.js";
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
-app.use(
-  cors({
-    origin:'*',
-    methods:["GET","POST","PATCH","PUT","DELETE"],
-    credentials:true
-  })
-)
+
+//cors
+
+app.use(cors({credentials:true,origin:['http://localhost:3001','https://rkv-forums-api.herokuapp.com/']}))
+
+// app.use(
+//   cors({
+//     origin:'*',
+//     methods:["GET","POST","PATCH","PUT","DELETE"],
+//     credentials:true
+//   })
+// )
+
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "http://localhost:3001");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
+
 
 app.get("/", (req, res) => res.status(200).json("RKV FORUMS API"));
 //test route
