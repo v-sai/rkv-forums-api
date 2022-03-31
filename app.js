@@ -22,7 +22,7 @@ app.use(cookieParser(process.env.JWT_SECRET));
 
 //cors
 
-app.use(cors({credentials:true,origin:['http://localhost:3001','https://rkv-forums-api.herokuapp.com/']}))
+app.use(cors({credentials:true,origin:['http://localhost:3001','https://rkv-forums-api.herokuapp.com']}))
 
 // app.use(
 //   cors({
